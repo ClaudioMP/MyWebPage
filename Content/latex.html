@@ -1,0 +1,57 @@
+	<img src="img/latex_logo.png">
+	<p>Trabajo con un potente editor de textos, LaTeX, para poder usarlo se deben instalar un par de programas (en Window$), los cuales dejaré a continuación</p>
+	<strong>Linux (Ubuntu y derivados):</strong>
+	<ol>
+	<li>
+	Escribe en la terminal:
+		<code>sudo apt-get install texlive-full</code>
+	</li>
+	<li>Busca en el repositorio de aplicaciones algún editor de LaTeX como kile o texmaker.</li>
+	</ol>
+	<strong>Para Windows:</strong>
+	<ol>
+	<li>Descarga e instalación de <a href="http://miktex.org/download" target="_blank">MikTeX</a>
+	<ol>
+	<li>Instala como administrador.</li>
+	<li>En &#8220;Preferred paper&#8221; selecciona &#8220;A4&#8243; o &#8220;Letter&#8221;, que son los tamaños normales.</li>
+	<li>En &#8220;Install missing packages on the fly&#8221; selecciona &#8220;yes&#8221;.</li>
+	</ol>
+	</li>
+	<li>Configurando MikTeX&#8230;
+	<ol>
+	<li>En Window$ XP/Vista/7 vamos a Inicio&gt;todos los programas&gt;MikTeX 2.9&gt;Maintenance (Admin)&gt; Settings (Admin), en Window$ 8 presionamos Win+Q y buscamos Settings (Admin) (ooooh!)</li>
+	<li>En la pestaña &#8220;languages&#8221; verificamos que se encuentre seleccionado el idioma español (obvio)</li>
+	<li>En la pestaña &#8220;General&#8221; veremos dos opciones, clickeamos primero &#8220;Refresh FNDB&#8221; y luego &#8220;Update Formats&#8221;, saldrán ventanitas adicionales pero nada de que preocuparse.</li>
+	<li>Tenemos listo el compilador.</li>
+	</ol>
+	</li>
+	<li><span style="line-height:1.5em;">Descarga e Instalación de </span><a href="http://www.xm1math.net/texmaker/download.html" target="_blank">TexMaker</a>
+	<ol>
+	<li>Se instala como cualquier programa común y corriente.</li>
+	</ol>
+	</li>
+	<li>Configurando TexMaker&#8230;
+	<ol>
+	<li>Ir a Opciones&gt;configurar TexMaker (oh! qué difícil!)</li>
+	<li>El visor DVI y PS se usan para ver ese tipo de archivos&#8230; que personalmente no uso, así que no los pongo.</li>
+	<li>En el visor PDF revisa el external viewer, si no usas Adobe Reader lo puedes bajar desde <a href="http://get.adobe.com/es/reader/" target="_blank">aquí</a> o entregarle la ruta correcta del visor PDF que uses.</li>
+	<li>En la pestaña de compilación rápida recomiendo usar &#8220;pdfLaTeX+ver PDF&#8221;.</li>
+	<li>En la pestaña editor buscamos el archivo es_ES.dic que es el diccionario de español.</li>
+	<li>Click en Aceptar y listo!</li>
+	</ol>
+	</li>
+	<li>Prueba de Funcionamiento.
+	<ol>
+	<li>Dentro de TexMaker abren un archivo nuevo.</li>
+	<li>Escribe:</li>
+	</ol>
+	<code>
+		\documentclass[10pt,a4paper]{article}<br/>
+		\usepackage[utf8]{inputenc}<br/>
+		\usepackage[spanish]{babel}<br/>
+		\begin{document}<br/>
+		\section{Probando nuestro primer documento}<br/>
+		Bienvenido al mundo de $\LaTeX{}$<br/>
+		\end{document}
+	</code>
+	<li>Compilar y ver el resultado.</li>	

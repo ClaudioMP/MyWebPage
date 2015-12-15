@@ -1,0 +1,28 @@
+<h3> Instalación de Packet Tracer</h3>
+        <p> <h4> <strong> Paso 1: Descargar Packet Tracer </strong></h4></p>
+        <ul>
+          <li>Para Windows 10/8.1/8/7: Descargar <a href="http://d-h.st/8zjl" target="_blank"><code>Cisco-PT-620.exe</code></a></li>  
+          <li>Para Linux (Debian, Ubuntu, Linux Mint): Descargar <a href="http://d-h.st/79hs" target="_blank"><code>Cisco-PT-620.tar.gz</code></a></li>  
+        </ul>
+        
+        <p><h4><strong> Paso 2 (Linux): Preparar el equipo </strong></h4></p>
+        Si tu S.O Linux es de 32 bits, salta este paso. Si tu S.O es de 64 bits debes ejecutar lo siguiente para habilitar la compatibilidad con arquitectura de 32 bits: <br />
+        <code>$ sudo dpkg --add-architecture i386</code><br>
+        <code>$ sudo apt-get install libnss3-1d:i386 libqt4-qt3support:i386 libssl1.0.0:i386 libqtwebkit4:i386 libqt4-scripttools:i386</code>
+
+        <p><h4><strong> Paso 3 Instalación:</strong></h4></p>
+        <ul>
+          <li> <span class="glyphicon glyphicon-info-sign"></span> En Windows se instala como programa común y corriente </li>
+          <li> En Linux debemos dirigirnos a la carpeta donde se guardó la descarga y ejecutar:</li>
+          <ul>
+            <li><code>$ tar -xvf Cisco-PT-620.tar.gz</code></li>
+            <li><code>$ cd PacketTracer62Student</code></li>
+            <li><code>$ ./install</code></li>
+          </ul>
+        </ul>
+
+        <p><h4><strong>Paso 4: Ejecución</strong></h4></p>
+        <ul>
+          <li>En Windows: buscar el programa y ejecutar con doble click</li>
+          <li>En Linux: lo mismo que en Windows o desde el terminal ejecutar <code>packettracer</code></li>
+        </ul>

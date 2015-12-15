@@ -1,0 +1,54 @@
+    El siguiente script de Bash es para usuarios de Ubuntu Linux, cuya versión de software es de 64-bits, la función del script es simplemente compilar y ejecutar los archivos escritos en lenguaje ensamblador (Intel x86) con extensión .s</p>
+
+                Script:<br/>
+                <code>
+                #!/bin/bash <br />
+                # Script para compilar y ejecutar archivos escritos en lenguaje ensamblador <br />
+                # Uso: <br />
+                # ./Ensamblar NombrePrograma ArquitecturaDelPrograma <br />
+                # NombrePrograma puede ser cualquier cosa, no se especifica la extensión .s <br />
+                # ArquitecturaDelPrograma debe ser 32 o 64: <br />
+                # Si es 32, el programa se compila para 32 bits. <br />
+                # Si es 64; para 64 bits. <br />
+                # <br />
+                # Escrito por Claudio Maldonado P. <br />
+                NArgs=2 <br />
+                Nombre=${1} <br />
+                Arch=${2} <br />
+                if [ $Arch -eq 32 ] <br />
+                then <br />
+                as -32 $Nombre.s -o $Nombre.o <br />
+                ld -melf_i386 $Nombre.o -o $Nombre <br />
+                elif [ $Arch -eq 64 ] <br />
+                then <br />
+                as $Nombre.s -o $Nombre.o <br />
+                ld $Nombre.o -o $Nombre <br />
+                fi <br />
+                ./$Nombre <br />
+                echo $? <br />
+                rm Nombre <br />
+                rm Arch <br />
+                rm NArgs <br />
+                </code>
+                <h4>Para los que tengan sistema operativo de 32 bits, el código del script es el siguiente:</h4><br/>
+                <code>
+                    #!/bin/bash <br />
+                    # Script para compilar y ejecutar archivos escritos en lenguaje ensamblador <br />
+                    # Uso: <br />
+                    # ./Ensamblar NombrePrograma <br />
+                    # NombrePrograma puede ser cualquier cosa, no se especifica la extensión .s <br />
+                    # <br />
+                    # Escrito por Claudio Maldonado P. <br />
+                    NArgs=1 <br />
+                    Nombre=${1} <br />
+                    as $Nombre.s -o $Nombre.o <br />
+                    ld $Nombre.o -o $Nombre <br />
+                    ./$Nombre <br />
+                    echo $? <br />
+                    rm Nombre <br />
+                    rm NArgs <br />
+                </code>
+                <div class="alert alert-info"> Deben copiar y pegar éste código en un archivo de texto, guardarlo y luego ejecutar lo siguiente. Supongamos que el archivo se llamará Ensamblar.sh (da lo mismo si lleva o no extensión):
+                <code>
+                    chmod +x Ensamblar.sh
+                </code>

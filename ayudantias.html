@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ayudantías</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="ayudantias.html">Ayudantías y manuales</a>
+            </div>
+            <!-- Top Menu Items -->
+          
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li id="latex">
+                        <a href="#" onclick="change('latex')"><i class="fa fa-fw fa-dashboard"></i> Instalación de LaTeX</a>
+                    </li>
+                    <li id="intel">
+                        <a href="#" onclick="change('intel')"><i class="fa fa-fw fa-bar-chart-o"></i> Intel x86</a>
+                    </li>
+                    <li id="poo">
+                        <a href="#" onclick="change('POO')"><i class="fa fa-fw fa-table"></i> Laboratorios POO 2014</a>
+                    </li>
+                    <li id="ayudant">
+                        <a href="#" onclick="change('ayudant')"><i class="fa fa-fw fa-edit"></i> Ayudantías pasadas</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-globe"></i> Lab de Redes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a onclick="change('material')" href="#">Material de Laboratorio</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="change('PT')">Packet Tracer</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12" id="content">
+                        <p> <h4>Para los alumnos del laboratorio de Redes de datos he creado un grupo en facebook, en el cual pueden realizar sus consultas si no quieren hacerlas por correo electrónico.</h4></p>
+                        <a href="https://www.facebook.com/groups/1637867036485750/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Ir al Grupo</span></a>
+                        <img align="center" width="80%" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/12112180_10208008455989035_3723818019503870922_n.jpg?oh=5fce42736129e85d2edeb80b1c255fc2&oe=56F92124&__gda__=1456016178_af7e5e84c2fff08b22a02a0c9556a1d4" alt="Laboraotorio de Redes TEL 2015">
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <!--script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script-->
+    <script type="text/javascript">
+        function change(content){
+            var param = {
+                 "ID" : content
+            }
+            $.ajax({
+                data: param,
+                url: 'untitled.php',
+                type: 'post',
+                success: function(response){
+                    console.log(response);
+                    document.getElementById("content").innerHTML = response;
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
